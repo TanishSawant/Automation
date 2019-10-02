@@ -1,0 +1,21 @@
+from selenium import webdriver
+
+from selenium.webdriver.common.keys import Keys
+
+import time
+
+
+
+message = input('Enter the video you want to search : ')
+
+b = webdriver.Chrome(executable_path='C:\\Users\\milindsawant\\Downloads\\chromedriver')
+
+b.get('https://www.youtube.com/')
+
+time.sleep(4)
+
+search = b.find_element_by_id('search')
+
+search.send_keys(message)
+
+search.send_keys(Keys.ENTER)
